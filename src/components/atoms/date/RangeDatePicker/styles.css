@@ -31,7 +31,7 @@
   align-items: center;
 
   display: flex;
-  background-image: url("../../../../assets/images/calendar-mock.png");
+  background-image: url("../../../../assets/calendar-mock.png");
   background-size: 30px 30px;
   background-repeat: no-repeat;
   background-position: center 9px;
@@ -54,7 +54,7 @@
   content: " ";
 
   display: flex;
-  background-image: url("../../../../assets/images/calendar-mock.png");
+  background-image: url("../../../../assets/calendar-mock.png");
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center 7px;
