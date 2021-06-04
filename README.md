@@ -13,8 +13,9 @@ There's a lot of enchantments possible on this code, so feel free to do PR.
 # TODO.md
 
 - ✅ UX react-dates styling
-- ❌ Modify hasError property to boolean
-- ❌ Refactor
+- ✅ Modify hasError property to boolean
+- ✅ Refactor
+- ❌ Simplify css selectors
 
 # Author
 

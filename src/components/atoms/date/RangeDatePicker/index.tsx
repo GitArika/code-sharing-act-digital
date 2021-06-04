@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DateRangePicker } from "react-dates";
 import { Moment } from "moment";
 
@@ -14,11 +14,6 @@ interface IValues {
   endDate: Moment | null;
 }
 
-interface IHasErrorValues {
-  startDate: boolean;
-  endDate: boolean;
-}
-
 interface IRangeDatePicker {
   startPlaceholder?: string;
   endPlaceholder?: string;
@@ -29,10 +24,8 @@ interface IRangeDatePicker {
   setStartDate: (date: Moment | null) => void;
   setEndDate: (date: Moment | null) => void;
   width?: string;
-  ref?: any;
   disabled?: boolean;
-  value?: IValues;
-  hasError?: IHasErrorValues;
+  hasError?: boolean;
 }
 
 const RangeDatePicker: React.FC<IRangeDatePicker> = ({
@@ -45,30 +38,18 @@ const RangeDatePicker: React.FC<IRangeDatePicker> = ({
   focusedDate,
   setFocusedDate,
   width,
-  ref,
   disabled,
-  value,
   hasError,
 }: IRangeDatePicker) => {
-  const [initialState, setInitialState] = useState<boolean>(true);
   const MOBILE_DEVICE = window.matchMedia("(max-width: 480px)").matches;
 
   const handleDateChange = ({ startDate: start, endDate: end }: IValues) => {
-    if (start && end) {
-      setInitialState(false);
-    }
-
     setStartDate(start);
     setEndDate(end);
   };
 
   return (
-    <Container
-      width={width}
-      value={value}
-      hasError={hasError}
-      initialState={initialState}
-    >
+    <Container width={width} value={{ startDate, endDate }} hasError={hasError}>
       <DateRangePicker
         orientation={MOBILE_DEVICE ? "vertical" : "horizontal"}
         isOutsideRange={() => false}
@@ -76,7 +57,6 @@ const RangeDatePicker: React.FC<IRangeDatePicker> = ({
         noBorder
         renderDayContents={handleDayConstants}
         disabled={disabled}
-        ref={ref}
         startDatePlaceholderText={startPlaceholder}
         startDate={startDate}
         startDateId="start_date_id"

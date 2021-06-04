@@ -11,12 +11,6 @@ import colors from "../../../../styles/colors";
 type IconContainerProps = {
   focused: boolean;
 };
-
-interface IHasErrorValues {
-  startDate: boolean;
-  endDate: boolean;
-}
-
 interface IValues {
   startDate: Moment | null;
   endDate: Moment | null;
@@ -25,8 +19,7 @@ interface IValues {
 interface IContainerProps {
   width?: string;
   value: IValues | undefined;
-  hasError: IHasErrorValues | undefined;
-  initialState: boolean;
+  hasError?: boolean;
 }
 
 export const Container = styled.div`
@@ -46,18 +39,13 @@ export const Container = styled.div`
       ${(props: IContainerProps) => {
         let color: string;
 
-        if (!props?.initialState) {
-          if (!props?.value?.startDate || !props?.value?.endDate) {
-            color = colors.warning;
-          } else if (props?.value?.startDate && props?.value?.endDate) {
-            color = colors.blueEinstein;
-          } else {
-            color = "#e3e4e6";
-          }
+        if (props?.hasError) {
+          color = colors.warning;
+        } else if (props?.value?.startDate && props?.value?.endDate) {
+          color = colors.blueEinstein;
         } else {
           color = "#e3e4e6";
         }
-
         return color;
       }} !important;
   }
@@ -67,14 +55,10 @@ export const Container = styled.div`
       ${(props: IContainerProps) => {
         let color: string;
 
-        if (!props?.initialState) {
-          if (!props?.value?.startDate || !props?.value?.endDate) {
-            color = colors.warning;
-          } else if (props?.value?.startDate && props?.value?.endDate) {
-            color = colors.blueEinstein;
-          } else {
-            color = "#e3e4e6";
-          }
+        if (props?.hasError) {
+          color = colors.warning;
+        } else if (props?.value?.startDate && props?.value?.endDate) {
+          color = colors.blueEinstein;
         } else {
           color = "#e3e4e6";
         }
