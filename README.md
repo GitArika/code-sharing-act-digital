@@ -14,11 +14,12 @@ There's a lot of enchantments possible on this code, so feel free to do PR.
 
 - ✅ UX react-dates styling
 - ✅ Modify hasError property to boolean
-- ✅ Refactor
+- ❌ Remove Moment dependency
+- ❌ Refactor
 - ❌ Simplify css selectors
 
-# Author
-
-Im a fullstack web developer, you can see more and contact with LinkedIn:
+# Author's
 
 [Ariel Evangelista](https://www.linkedin.com/in/ariel-evangelista-a4677614b/). Hope you enjoy!
+
+If you're contributing for this repository, feel free to list yourself.

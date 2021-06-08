@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { DateRangePicker } from "react-dates";
+
 import { Moment } from "moment";
 
 import { Container } from "./styles";
@@ -15,32 +16,37 @@ interface IValues {
 }
 
 interface IRangeDatePicker {
-  startPlaceholder?: string;
-  endPlaceholder?: string;
   startDate: Moment | null;
   endDate: Moment | null;
-  focusedDate: any;
-  setFocusedDate: any;
   setStartDate: (date: Moment | null) => void;
   setEndDate: (date: Moment | null) => void;
   width?: string;
+  startPlaceholder?: string;
+  endPlaceholder?: string;
   disabled?: boolean;
   hasError?: boolean;
 }
 
+/**
+ * @FIXME:
+ * startDate, endDate: Moment
+ *
+ * Using moment for type because react-dates dependency.
+ */
 const RangeDatePicker: React.FC<IRangeDatePicker> = ({
-  startPlaceholder,
-  endPlaceholder,
   startDate,
   endDate,
   setStartDate,
   setEndDate,
-  focusedDate,
-  setFocusedDate,
   width,
+  startPlaceholder,
+  endPlaceholder,
   disabled,
   hasError,
 }: IRangeDatePicker) => {
+  const [focusedDate, setFocusedDate] =
+    useState<"startDate" | "endDate" | null>(null);
+
   const MOBILE_DEVICE = window.matchMedia("(max-width: 480px)").matches;
 
   const handleDateChange = ({ startDate: start, endDate: end }: IValues) => {

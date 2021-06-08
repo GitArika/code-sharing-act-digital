@@ -131,7 +131,7 @@ input#end_date_id::placeholder {
 }
 
 .CalendarDay__selected_span:hover {
-  background: #1e47a5 !important;
+  background: #edeef2 !important;
   border: 0px;
 }
 
