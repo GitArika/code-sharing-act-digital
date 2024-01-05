@@ -14,9 +14,8 @@ There's a lot of enchantments possible on this code, so feel free to do PR.
 
 - ✅ UX react-dates styling
 - ✅ Modify hasError property to boolean
-- ❌ Remove Moment dependency
-- ❌ Refactor
-- ❌ Simplify css selectors
+- ✅ Refactor
+- ✅ Simplify css selectors
 
 # Author's
 
