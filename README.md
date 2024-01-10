@@ -21,4 +21,4 @@ There's a lot of enchantments possible on this code, so feel free to do PR.
 
 [Ariel Evangelista](https://www.linkedin.com/in/ariel-evangelista-a4677614b/). Hope you enjoy!
 
-If you're contributing for this repository, feel free to list yourself.
+Contribute on this repository creating a PR.
